@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h3>{{ msg }}</h3>
+    <h2>{{ msg }}</h2>
     <el-card class="box-card">
     <h4>Вес и кол-во подходов за прошлую тренировку</h4>
       <el-form :inline="true" :model="gym" class="demo-form-inline el-icon-edit"> 
