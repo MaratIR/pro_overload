@@ -1,20 +1,23 @@
 <template>
   <div class="hello">
     <h2>{{ msg }}</h2>
+    <el-card class="box-card">
     <h4>Вес и кол-во подходов за прошлую тренировку</h4>
-      <el-form :inline="true" :model="gym" class="demo-form-inline">
+      <el-form :inline="true" :model="gym" class="demo-form-inline el-icon-edit"> 
         <el-form-item>
-          <el-input v-model="gym.last_weight" placeholder="Вес"></el-input>
+          <el-input v-model="gym.last_weight" placeholder="Вес" ></el-input>
         </el-form-item>
         <el-input-number v-model="gym.last_count" @change="handleChange_last" :min="3" :max="6"></el-input-number>
       </el-form>
     <h4>Вес и кол-во подходов на текущей тренировке:</h4>
-      <el-form :inline="true" :model="gym" class="demo-form-inline">
+      <el-form :inline="true" :model="gym" class="demo-form-inline el-icon-edit">
         <el-form-item>
           <el-input v-model="gym.now_weight" placeholder="Вес"></el-input>
         </el-form-item>
         <el-input-number v-model="gym.now_count" @change="handleChange_now" :min="3" :max="6"></el-input-number> 
       </el-form>
+      </el-card>
+      <el-card>
       <el-form>
         <h4>Тоннаж и кол-во подходов на прошлой и текущей тренировке:</h4>
         <p style="text-align: center">{{gym.last_weight_sum}} кг VS. {{gym.now_weight_sum}} кг</p>
@@ -44,6 +47,7 @@
           <el-input :disabled="gym.now_count<6" placeholder="Текущий подход" v-model="gym.now_reps[5]" class="demo-input-label" @input="update(5)"></el-input>
         </el-form-item>
       </el-form>  
+      </el-card>
   </div>
 </template>
 
